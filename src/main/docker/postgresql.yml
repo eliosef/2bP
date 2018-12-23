@@ -1,0 +1,11 @@
+version: '2'
+services:
+    2bp-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/2bP/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=2bP
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
