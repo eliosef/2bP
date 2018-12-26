@@ -1,0 +1,39 @@
+{
+    "name": "Employment",
+    "fields": [
+        {
+            "fieldName": "position",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "otherEntityField": "lastName",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "manager",
+            "otherEntityName": "employee",
+            "otherEntityField": "lastName",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20181225205031",
+    "entityTableName": "employment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

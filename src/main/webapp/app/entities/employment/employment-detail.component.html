@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employment">
+            <h2><span jhiTranslate="App.employment.detail.title">Employment</span> {{employment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="App.employment.position">Position</span></dt>
+                <dd>
+                    <span>{{employment.position}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.employment.employee">Employee</span></dt>
+                <dd>
+                    <span *ngFor="let employee of employment.employees; let last = last">
+                        <a [routerLink]="['/employee', employee?.id, 'view' ]">{{employee.lastName}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="App.employment.manager">Manager</span></dt>
+                <dd>
+                    <span *ngFor="let manager of employment.managers; let last = last">
+                        <a [routerLink]="['/employee', manager?.id, 'view' ]">{{manager.lastName}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employment', employment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

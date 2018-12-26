@@ -1,0 +1,29 @@
+{
+    "name": "Report",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "employment",
+            "otherEntityName": "employment",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181225205032",
+    "entityTableName": "report",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
